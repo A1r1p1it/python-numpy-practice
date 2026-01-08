@@ -5,18 +5,21 @@
 # - Normalize the array to z-scores: (x - mean) / std
 # - Count how many values have absolute z-score greater than 2
 import numpy as np
+import pandas as pd
 arr = np.random.randint(10, 100, 50)
-print("50 random int: ", arr, "/n")
+print("50 random integers: ", arr, "\n")
 
-mean_50 = np.mean(arr)
-print("Mean of 50 arrays: ", mean_50, "\n")
+mean_a = np.mean(arr)
+print("Mean of the array: ",mean_a, "\n")
 
-median_50 = np.median(arr)
-print("Median of array of 50: ", median_50, "\n")
+std_a = np.std(arr)
+print("Standard deviation of the array: ", std_a, "\n")
 
-z_scores = (arr - mean_50) / np.std(arr)
-print("z-scores: ", z_scores[:10], "\n")
+z_scores = (arr - mean_a) / std_a
+vert_ical = np.vstack((z_scores))
+print("z-scored: ", vert_ical[:10], "\n")
 
-abs_zscore = np.abs(z_scores) > 2
-total = np.sum(abs_zscore)
-print(total)
+great_er = np.abs(z_scores) > 2
+great_er
+add_ing = np.sum(great_er)
+print(add_ing)
